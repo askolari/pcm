@@ -1,0 +1,2 @@
+"category","subcategory","ID","Description","GeneRatio","BgRatio","RichFactor","FoldEnrichment","zScore","pvalue","p.adjust","qvalue","geneID","Count"
+"Organismal Systems","Environmental adaptation","mmu04710","Circadian rhythm - Mus musculus (house mouse)","4/50","34/9775",0.117647058823529,23,9.21375653389035,2.50892929823297e-05,0.00358776889647314,0.00330122276083285,"225998/13170/217166/11865",4

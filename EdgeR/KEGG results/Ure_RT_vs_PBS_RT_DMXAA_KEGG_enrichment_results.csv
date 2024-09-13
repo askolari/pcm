@@ -1,0 +1,2 @@
+"category","subcategory","ID","Description","GeneRatio","BgRatio","RichFactor","FoldEnrichment","zScore","pvalue","p.adjust","qvalue","geneID","Count"
+"Human Diseases","Infectious disease: parasitic","mmu05143","African trypanosomiasis - Mus musculus (house mouse)","3/23","39/9775",0.0769230769230769,32.6923076923077,9.63050638864529,9.84108450903653e-05,0.0070855808465063,0.00652619288494002,"15930/14103/20339",3
