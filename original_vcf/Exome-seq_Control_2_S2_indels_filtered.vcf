@@ -1,0 +1,64 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=LowDepth,Description="Tumor or normal sample read depth at this locus is below 2">
+##FILTER=<ID=LowEVS,Description="Somatic Empirical Variant Score (SomaticEVS) is below threshold">
+##FORMAT=<ID=BCN50,Number=1,Type=Float,Description="Fraction of filtered reads within 50 bases of the indel.">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1">
+##FORMAT=<ID=DP2,Number=1,Type=Integer,Description="Read depth for tier2">
+##FORMAT=<ID=DP50,Number=1,Type=Float,Description="Average tier1 read depth within 50 bases">
+##FORMAT=<ID=FDP50,Number=1,Type=Float,Description="Average tier1 number of basecalls filtered from original read depth within 50 bases">
+##FORMAT=<ID=SUBDP50,Number=1,Type=Float,Description="Average number of reads below tier1 mapping quality threshold aligned across sites within 50 bases">
+##FORMAT=<ID=TAR,Number=2,Type=Integer,Description="Reads strongly supporting alternate allele for tiers 1,2">
+##FORMAT=<ID=TIR,Number=2,Type=Integer,Description="Reads strongly supporting indel allele for tiers 1,2">
+##FORMAT=<ID=TOR,Number=2,Type=Integer,Description="Other reads (weak support or insufficient indel breakpoint overlap) for tiers 1,2">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_2_S2.strelka.indels.pass.vcf --exclude-filtered true --variant Exome-seq_Control_2_S2.strelka.indels.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:58:02 AM UTC">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_2_S2.strelka.indels.vcf --variant strelka/results/variants/somatic.indels.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --exclude-filtered false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:57:59 AM UTC">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=IC,Number=1,Type=Integer,Description="Number of times RU repeats in the indel allele">
+##INFO=<ID=IHP,Number=1,Type=Integer,Description="Largest reference interrupted homopolymer length intersecting with the indel">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=NT,Number=1,Type=String,Description="Genotype of the normal in all data tiers, as used to classify somatic variants. One of {ref,het,hom,conflict}.">
+##INFO=<ID=OVERLAP,Number=0,Type=Flag,Description="Somatic indel possibly overlaps a second indel.">
+##INFO=<ID=QSI,Number=1,Type=Integer,Description="Quality score for any somatic variant, ie. for the ALT haplotype to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSI_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=RC,Number=1,Type=Integer,Description="Number of times RU repeats in the reference allele">
+##INFO=<ID=RU,Number=1,Type=String,Description="Smallest repeating sequence unit in inserted or deleted sequence">
+##INFO=<ID=SGT,Number=1,Type=String,Description="Most likely somatic genotype excluding normal noise states">
+##INFO=<ID=SOMATIC,Number=0,Type=Flag,Description="Somatic mutation">
+##INFO=<ID=SomaticEVS,Number=1,Type=Float,Description="Somatic Empirical Variant Score (EVS) expressing the phred-scaled probability of the call being a false positive observation.">
+##INFO=<ID=TQSI,Number=1,Type=Integer,Description="Data tier used to compute QSI">
+##INFO=<ID=TQSI_NT,Number=1,Type=Integer,Description="Data tier used to compute QSI_NT">
+##cmdline=/opt/strelka-2.9.10.centos6_x86_64/bin/configureStrelkaSomaticWorkflow.py --normalBam /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Exome-seq_Controls_merged/Exome-seq_Controls_merged_final.bam --tumorBam Exome-seq_Control_2_S2_merged_final.bam --callRegions /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/S0276129_Regions.bed.bgz --referenceFasta /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --exome --indelCandidates manta/results/variants/candidateSmallIndels.vcf.gz --runDir strelka
+##content=strelka somatic indel calls
+##contig=<ID=chr10,length=129993255,assembly=genome.fa>
+##contig=<ID=chr11,length=121843856,assembly=genome.fa>
+##contig=<ID=chr12,length=121257530,assembly=genome.fa>
+##contig=<ID=chr13,length=120284312,assembly=genome.fa>
+##contig=<ID=chr14,length=125194864,assembly=genome.fa>
+##contig=<ID=chr15,length=103494974,assembly=genome.fa>
+##contig=<ID=chr16,length=98319150,assembly=genome.fa>
+##contig=<ID=chr17,length=95272651,assembly=genome.fa>
+##contig=<ID=chr18,length=90772031,assembly=genome.fa>
+##contig=<ID=chr19,length=61342430,assembly=genome.fa>
+##contig=<ID=chr1,length=197195432,assembly=genome.fa>
+##contig=<ID=chr2,length=181748087,assembly=genome.fa>
+##contig=<ID=chr3,length=159599783,assembly=genome.fa>
+##contig=<ID=chr4,length=155630120,assembly=genome.fa>
+##contig=<ID=chr5,length=152537259,assembly=genome.fa>
+##contig=<ID=chr6,length=149517037,assembly=genome.fa>
+##contig=<ID=chr7,length=152524553,assembly=genome.fa>
+##contig=<ID=chr8,length=131738871,assembly=genome.fa>
+##contig=<ID=chr9,length=124076172,assembly=genome.fa>
+##contig=<ID=chrM,length=16299,assembly=genome.fa>
+##contig=<ID=chrX,length=166650296,assembly=genome.fa>
+##contig=<ID=chrY,length=15902555,assembly=genome.fa>
+##fileDate=20210609
+##priorSomaticIndelRate=1e-06
+##reference=file:///data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa
+##source=SelectVariants
+##source_version=2.9.10
+##startTime=Wed Jun  9 15:54:57 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOR

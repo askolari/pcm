@@ -1,0 +1,92 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=LowDepth,Description="Tumor or normal sample read depth at this locus is below 2">
+##FILTER=<ID=LowEVS,Description="Somatic Empirical Variant Score (SomaticEVS) is below threshold">
+##FORMAT=<ID=AU,Number=2,Type=Integer,Description="Number of 'A' alleles used in tiers 1,2">
+##FORMAT=<ID=CU,Number=2,Type=Integer,Description="Number of 'C' alleles used in tiers 1,2">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1 (used+filtered)">
+##FORMAT=<ID=FDP,Number=1,Type=Integer,Description="Number of basecalls filtered from original read depth for tier1">
+##FORMAT=<ID=GU,Number=2,Type=Integer,Description="Number of 'G' alleles used in tiers 1,2">
+##FORMAT=<ID=SDP,Number=1,Type=Integer,Description="Number of reads with deletions spanning this site at tier1">
+##FORMAT=<ID=SUBDP,Number=1,Type=Integer,Description="Number of reads below tier1 mapping quality threshold aligned across this site">
+##FORMAT=<ID=TU,Number=2,Type=Integer,Description="Number of 'T' alleles used in tiers 1,2">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_1_S1.strelka.snvs.pass.vcf --exclude-filtered true --variant Exome-seq_Control_1_S1.strelka.snvs.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:57:26 AM UTC">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_1_S1.strelka.snvs.vcf --variant strelka/results/variants/somatic.snvs.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --exclude-filtered false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:57:22 AM UTC">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=NT,Number=1,Type=String,Description="Genotype of the normal in all data tiers, as used to classify somatic variants. One of {ref,het,hom,conflict}.">
+##INFO=<ID=PNOISE,Number=1,Type=Float,Description="Fraction of panel containing non-reference noise at this site">
+##INFO=<ID=PNOISE2,Number=1,Type=Float,Description="Fraction of panel containing more than one non-reference noise obs at this site">
+##INFO=<ID=QSS,Number=1,Type=Integer,Description="Quality score for any somatic snv, ie. for the ALT allele to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSS_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref read-position in the tumor">
+##INFO=<ID=SGT,Number=1,Type=String,Description="Most likely somatic genotype excluding normal noise states">
+##INFO=<ID=SNVSB,Number=1,Type=Float,Description="Somatic SNV site strand bias">
+##INFO=<ID=SOMATIC,Number=0,Type=Flag,Description="Somatic mutation">
+##INFO=<ID=SomaticEVS,Number=1,Type=Float,Description="Somatic Empirical Variant Score (EVS) expressing the phred-scaled probability of the call being a false positive observation.">
+##INFO=<ID=TQSS,Number=1,Type=Integer,Description="Data tier used to compute QSS">
+##INFO=<ID=TQSS_NT,Number=1,Type=Integer,Description="Data tier used to compute QSS_NT">
+##cmdline=/opt/strelka-2.9.10.centos6_x86_64/bin/configureStrelkaSomaticWorkflow.py --normalBam /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Exome-seq_Controls_merged/Exome-seq_Controls_merged_final.bam --tumorBam Exome-seq_Control_1_S1_merged_final.bam --callRegions /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/S0276129_Regions.bed.bgz --referenceFasta /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --exome --indelCandidates manta/results/variants/candidateSmallIndels.vcf.gz --runDir strelka
+##content=strelka somatic snv calls
+##contig=<ID=chr10,length=129993255,assembly=genome.fa>
+##contig=<ID=chr11,length=121843856,assembly=genome.fa>
+##contig=<ID=chr12,length=121257530,assembly=genome.fa>
+##contig=<ID=chr13,length=120284312,assembly=genome.fa>
+##contig=<ID=chr14,length=125194864,assembly=genome.fa>
+##contig=<ID=chr15,length=103494974,assembly=genome.fa>
+##contig=<ID=chr16,length=98319150,assembly=genome.fa>
+##contig=<ID=chr17,length=95272651,assembly=genome.fa>
+##contig=<ID=chr18,length=90772031,assembly=genome.fa>
+##contig=<ID=chr19,length=61342430,assembly=genome.fa>
+##contig=<ID=chr1,length=197195432,assembly=genome.fa>
+##contig=<ID=chr2,length=181748087,assembly=genome.fa>
+##contig=<ID=chr3,length=159599783,assembly=genome.fa>
+##contig=<ID=chr4,length=155630120,assembly=genome.fa>
+##contig=<ID=chr5,length=152537259,assembly=genome.fa>
+##contig=<ID=chr6,length=149517037,assembly=genome.fa>
+##contig=<ID=chr7,length=152524553,assembly=genome.fa>
+##contig=<ID=chr8,length=131738871,assembly=genome.fa>
+##contig=<ID=chr9,length=124076172,assembly=genome.fa>
+##contig=<ID=chrM,length=16299,assembly=genome.fa>
+##contig=<ID=chrX,length=166650296,assembly=genome.fa>
+##contig=<ID=chrY,length=15902555,assembly=genome.fa>
+##fileDate=20210609
+##priorSomaticSnvRate=0.0001
+##reference=file:///data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa
+##source=SelectVariants
+##source_version=2.9.10
+##startTime=Wed Jun  9 15:45:23 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOR
+chr11	61498587	.	C	T	.	PASS	DP=48;MQ=59.67;MQ0=0;NT=ref;QSS=49;QSS_NT=49;ReadPosRankSum=-2.12;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=7.67;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:34,35:37:1:0,0:0:0:2,2	0,0:9,9:11:0:0,0:0:0:2,2
+chr11	102417363	.	G	A	.	PASS	DP=49;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=-1.09;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.65;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:36:0:34,34:0:0:0,0	2,2:0,0:13:0:11,11:0:0:0,0
+chr11	119873743	.	G	A	.	PASS	DP=52;MQ=60.00;MQ0=0;NT=ref;QSS=48;QSS_NT=48;ReadPosRankSum=-1.72;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=9.83;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:40:0:38,38:0:0:0,0	2,2:0,0:12:0:10,10:0:0:0,0
+chr15	11920886	.	A	G	.	PASS	DP=51;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=0.18;SGT=AA->AG;SNVSB=0.00;SOMATIC;SomaticEVS=7.89;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	35,35:0,0:37:0:2,2:0:0:0,0	12,12:0,0:14:0:2,2:0:0:0,0
+chr17	10511780	.	C	G	.	PASS	DP=62;MQ=60.00;MQ0=0;NT=ref;QSS=41;QSS_NT=41;ReadPosRankSum=-0.81;SGT=CC->CG;SNVSB=0.00;SOMATIC;SomaticEVS=7.14;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:38,38:40:0:2,2:0:0:0,0	0,0:19,19:22:0:3,3:0:0:0,0
+chr17	10511781	.	C	A	.	PASS	DP=62;MQ=60.00;MQ0=0;NT=ref;QSS=41;QSS_NT=41;ReadPosRankSum=-0.81;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=7.14;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:38,38:40:0:0,0:0:0:0,0	3,3:19,19:22:0:0,0:0:0:0,0
+chr17	15664275	.	C	G	.	PASS	DP=39;MQ=60.00;MQ0=0;NT=ref;QSS=39;QSS_NT=39;ReadPosRankSum=0.65;SGT=CC->CG;SNVSB=0.00;SOMATIC;SomaticEVS=7.00;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:27,27:29:0:2,2:0:0:0,0	0,0:8,8:10:0:2,2:0:0:0,0
+chr18	77874049	.	T	C	.	PASS	DP=57;MQ=60.00;MQ0=0;NT=ref;QSS=42;QSS_NT=42;ReadPosRankSum=1.19;SGT=TT->CT;SNVSB=0.00;SOMATIC;SomaticEVS=7.78;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:2,2:42:0:0,0:0:0:40,40	0,0:2,2:15:0:0,0:0:0:13,13
+chr19	6384752	.	A	G	.	PASS	DP=85;MQ=60.00;MQ0=0;NT=ref;QSS=41;QSS_NT=41;ReadPosRankSum=0.23;SGT=AA->AG;SNVSB=0.00;SOMATIC;SomaticEVS=7.41;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	59,59:1,1:62:0:2,2:0:0:0,0	20,20:1,1:23:0:2,2:0:0:0,0
+chr19	21876546	.	G	A	.	PASS	DP=46;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=-0.99;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=7.19;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:33:0:31,31:0:0:0,0	2,2:0,0:13:0:11,11:0:0:0,0
+chr19	46587819	.	C	T	.	PASS	DP=47;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=0.39;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=8.09;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:32,32:34:0:0,0:0:0:2,2	0,0:11,11:13:0:0,0:0:0:2,2
+chr1	6204679	.	C	T	.	PASS	DP=38;MQ=60.00;MQ0=0;NT=ref;QSS=39;QSS_NT=39;ReadPosRankSum=-0.29;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=7.69;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:27,27:29:0:0,0:0:0:2,2	0,0:7,7:9:0:0,0:0:0:2,2
+chr1	52694336	.	C	T	.	PASS	DP=47;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=0.00;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=8.09;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:32,32:34:0:0,0:0:0:2,2	0,0:11,11:13:0:0,0:0:0:2,2
+chr1	172596825	.	G	A	.	PASS	DP=44;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=1.50;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.31;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:32:0:30,30:0:0:0,0	2,2:0,0:12:0:10,10:0:0:0,0
+chr2	30093101	.	C	T	.	PASS	DP=58;MQ=60.00;MQ0=0;NT=ref;QSS=46;QSS_NT=46;ReadPosRankSum=-0.82;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=7.82;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:38,38:41:0:0,0:0:0:3,3	0,0:14,14:17:0:0,0:0:0:3,3
+chr2	66067209	.	G	A	.	PASS	DP=45;MQ=60.00;MQ0=0;NT=ref;QSS=46;QSS_NT=46;ReadPosRankSum=-0.21;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.84;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:33:0:31,31:0:0:0,0	2,2:0,0:12:0:10,10:0:0:0,0
+chr2	155820768	.	T	C	.	PASS	DP=50;MQ=60.00;MQ0=0;NT=ref;QSS=49;QSS_NT=49;ReadPosRankSum=-0.24;SGT=TT->CT;SNVSB=0.00;SOMATIC;SomaticEVS=10.51;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:2,2:37:0:0,0:0:0:35,37	0,0:2,2:11:0:0,0:0:0:9,9
+chr4	63059080	.	C	A	.	PASS	DP=55;MQ=60.00;MQ0=0;NT=ref;QSS=46;QSS_NT=46;ReadPosRankSum=0.64;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=10.31;TQSS=2;TQSS_NT=2	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:39,40:41:0:0,0:0:0:0,0	2,2:10,11:12:0:0,0:0:0:0,0
+chr4	133403940	.	T	C	.	PASS	DP=48;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=0.59;SGT=TT->CT;SNVSB=0.00;SOMATIC;SomaticEVS=8.31;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:2,2:35:0:0,0:0:0:33,33	0,0:2,2:13:0:0,0:0:0:11,11
+chr4	153349045	.	G	A	.	PASS	DP=58;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=-0.18;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=9.07;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:44:0:42,42:0:0:0,0	2,2:0,0:14:0:12,12:0:0:0,0
+chr5	109986063	.	G	A	.	PASS	DP=44;MQ=60.00;MQ0=0;NT=ref;QSS=45;QSS_NT=45;ReadPosRankSum=-0.75;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.31;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:32:0:30,30:0:0:0,0	2,2:0,0:12:0:10,10:0:0:0,0
+chr5	125088223	.	C	T	.	PASS	DP=51;MQ=60.00;MQ0=0;NT=ref;QSS=50;QSS_NT=50;ReadPosRankSum=0.24;SGT=CC->CT;SNVSB=0.00;SOMATIC;SomaticEVS=10.80;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:38,38:40:0:0,0:0:0:2,2	0,0:9,9:11:0:0,0:0:0:2,2
+chr5	143650496	.	C	A	.	PASS	DP=41;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=-0.78;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=8.84;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:29,29:31:0:0,0:0:0:0,0	2,2:8,8:10:0:0,0:0:0:0,0
+chr6	36944932	.	C	A	.	PASS	DP=64;MQ=60.00;MQ0=0;NT=ref;QSS=40;QSS_NT=40;ReadPosRankSum=-0.48;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=7.33;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:46,46:48:0:0,0:0:0:0,0	2,2:14,14:16:0:0,0:0:0:0,0
+chr6	50270014	.	A	G	.	PASS	DP=58;MQ=60.00;MQ0=0;NT=ref;QSS=46;QSS_NT=46;ReadPosRankSum=0.43;SGT=AA->AG;SNVSB=0.00;SOMATIC;SomaticEVS=10.58;TQSS=2;TQSS_NT=2	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	43,43:0,0:45:0:2,2:0:0:0,0	10,11:0,0:12:0:2,2:0:0:0,0
+chr6	85324356	.	C	A	.	PASS	DP=47;MQ=60.00;MQ0=0;NT=ref;QSS=47;QSS_NT=47;ReadPosRankSum=-1.50;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=9.42;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:33,33:35:0:0,0:0:0:0,0	2,2:10,10:12:0:0,0:0:0:0,0
+chr7	25661085	.	C	A	.	PASS	DP=51;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=-1.00;SGT=CC->AC;SNVSB=0.00;SOMATIC;SomaticEVS=7.89;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:35,35:37:0:0,0:0:0:0,0	2,2:12,12:14:0:0,0:0:0:0,0
+chr7	38746520	.	G	A	.	PASS	DP=36;MQ=60.00;MQ0=0;NT=ref;QSS=34;QSS_NT=34;ReadPosRankSum=0.67;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.01;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:28:0:26,26:0:0:0,0	2,2:0,0:8:0:6,6:0:0:0,0
+chr8	47080850	.	T	G	.	PASS	DP=45;MQ=60.00;MQ0=0;NT=ref;QSS=52;QSS_NT=52;ReadPosRankSum=-0.29;SGT=TT->GT;SNVSB=0.00;SOMATIC;SomaticEVS=14.56;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	0,0:0,0:36:0:2,2:0:0:34,34	0,0:0,0:9:0:2,2:0:0:7,7
+chr9	21748008	.	G	A	.	PASS	DP=42;MQ=60.00;MQ0=0;NT=ref;QSS=44;QSS_NT=44;ReadPosRankSum=0.71;SGT=GG->AG;SNVSB=0.00;SOMATIC;SomaticEVS=8.25;TQSS=1;TQSS_NT=1	AU:CU:DP:FDP:GU:SDP:SUBDP:TU	2,2:0,0:31:0:29,29:0:0:0,0	2,2:0,0:11:0:9,9:0:0:0,0
