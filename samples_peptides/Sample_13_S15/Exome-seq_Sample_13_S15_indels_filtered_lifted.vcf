@@ -1,0 +1,101 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=LowDepth,Description="Tumor or normal sample read depth at this locus is below 2">
+##FILTER=<ID=LowEVS,Description="Somatic Empirical Variant Score (SomaticEVS) is below threshold">
+##FORMAT=<ID=BCN50,Number=1,Type=Float,Description="Fraction of filtered reads within 50 bases of the indel.">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1">
+##FORMAT=<ID=DP2,Number=1,Type=Integer,Description="Read depth for tier2">
+##FORMAT=<ID=DP50,Number=1,Type=Float,Description="Average tier1 read depth within 50 bases">
+##FORMAT=<ID=FDP50,Number=1,Type=Float,Description="Average tier1 number of basecalls filtered from original read depth within 50 bases">
+##FORMAT=<ID=SUBDP50,Number=1,Type=Float,Description="Average number of reads below tier1 mapping quality threshold aligned across sites within 50 bases">
+##FORMAT=<ID=TAR,Number=2,Type=Integer,Description="Reads strongly supporting alternate allele for tiers 1,2">
+##FORMAT=<ID=TIR,Number=2,Type=Integer,Description="Reads strongly supporting indel allele for tiers 1,2">
+##FORMAT=<ID=TOR,Number=2,Type=Integer,Description="Other reads (weak support or insufficient indel breakpoint overlap) for tiers 1,2">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Sample_13_S15.strelka.indels.pass.vcf --exclude-filtered true --variant Exome-seq_Sample_13_S15.strelka.indels.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:59:59 AM UTC">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Sample_13_S15.strelka.indels.vcf --variant strelka/results/variants/somatic.indels.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --exclude-filtered false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:59:55 AM UTC">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=IC,Number=1,Type=Integer,Description="Number of times RU repeats in the indel allele">
+##INFO=<ID=IHP,Number=1,Type=Integer,Description="Largest reference interrupted homopolymer length intersecting with the indel">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=NT,Number=1,Type=String,Description="Genotype of the normal in all data tiers, as used to classify somatic variants. One of {ref,het,hom,conflict}.">
+##INFO=<ID=OVERLAP,Number=0,Type=Flag,Description="Somatic indel possibly overlaps a second indel.">
+##INFO=<ID=QSI,Number=1,Type=Integer,Description="Quality score for any somatic variant, ie. for the ALT haplotype to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSI_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=RC,Number=1,Type=Integer,Description="Number of times RU repeats in the reference allele">
+##INFO=<ID=RU,Number=1,Type=String,Description="Smallest repeating sequence unit in inserted or deleted sequence">
+##INFO=<ID=SGT,Number=1,Type=String,Description="Most likely somatic genotype excluding normal noise states">
+##INFO=<ID=SOMATIC,Number=0,Type=Flag,Description="Somatic mutation">
+##INFO=<ID=SomaticEVS,Number=1,Type=Float,Description="Somatic Empirical Variant Score (EVS) expressing the phred-scaled probability of the call being a false positive observation.">
+##INFO=<ID=TQSI,Number=1,Type=Integer,Description="Data tier used to compute QSI">
+##INFO=<ID=TQSI_NT,Number=1,Type=Integer,Description="Data tier used to compute QSI_NT">
+##cmdline=/opt/strelka-2.9.10.centos6_x86_64/bin/configureStrelkaSomaticWorkflow.py --normalBam /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Exome-seq_Controls_merged/Exome-seq_Controls_merged_final.bam --tumorBam Exome-seq_Sample_13_S15_merged_final.bam --callRegions /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/S0276129_Regions.bed.bgz --referenceFasta /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --exome --indelCandidates manta/results/variants/candidateSmallIndels.vcf.gz --runDir strelka
+##content=strelka somatic indel calls
+##contig=<ID=chr10,length=129993255,assembly=genome.fa>
+##contig=<ID=chr11,length=121843856,assembly=genome.fa>
+##contig=<ID=chr12,length=121257530,assembly=genome.fa>
+##contig=<ID=chr13,length=120284312,assembly=genome.fa>
+##contig=<ID=chr14,length=125194864,assembly=genome.fa>
+##contig=<ID=chr15,length=103494974,assembly=genome.fa>
+##contig=<ID=chr16,length=98319150,assembly=genome.fa>
+##contig=<ID=chr17,length=95272651,assembly=genome.fa>
+##contig=<ID=chr18,length=90772031,assembly=genome.fa>
+##contig=<ID=chr19,length=61342430,assembly=genome.fa>
+##contig=<ID=chr1,length=197195432,assembly=genome.fa>
+##contig=<ID=chr2,length=181748087,assembly=genome.fa>
+##contig=<ID=chr3,length=159599783,assembly=genome.fa>
+##contig=<ID=chr4,length=155630120,assembly=genome.fa>
+##contig=<ID=chr5,length=152537259,assembly=genome.fa>
+##contig=<ID=chr6,length=149517037,assembly=genome.fa>
+##contig=<ID=chr7,length=152524553,assembly=genome.fa>
+##contig=<ID=chr8,length=131738871,assembly=genome.fa>
+##contig=<ID=chr9,length=124076172,assembly=genome.fa>
+##contig=<ID=chrM,length=16299,assembly=genome.fa>
+##contig=<ID=chrX,length=166650296,assembly=genome.fa>
+##contig=<ID=chrY,length=15902555,assembly=genome.fa>
+##fileDate=20210609
+##priorSomaticIndelRate=1e-06
+##reference=file:///data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa
+##source=SelectVariants
+##source_version=2.9.10
+##startTime=Wed Jun  9 16:30:29 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOR
+chr1	57995726	.	.	CG	C	PASS	IC=4;IHP=5;MQ=60.00;MQ0=0;NT=ref;QSI=49;QSI_NT=49;RC=5;RU=G;SGT=ref->het;SOMATIC;SomaticEVS=16.87;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:73:73:70.99:0.00:0.00:72,74:0,0:1,1	0.00:23:23:23.64:0.00:0.00:19,20:4,4:0,0
+chr1	93365037	.	.	CA	C	PASS	IC=8;IHP=9;MQ=60.00;MQ0=0;NT=ref;QSI=29;QSI_NT=29;RC=9;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=6.20;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:117:117:164.85:0.00:0.00:106,106:1,1:12,12	0.00:39:39:55.43:0.00:0.00:33,33:4,4:2,2
+chr10	80200905	.	.	GTC	G	PASS	IC=6;IHP=2;MQ=60.00;MQ0=0;NT=ref;QSI=31;QSI_NT=31;RC=7;RU=TC;SGT=ref->het;SOMATIC;SomaticEVS=6.13;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:50:50:31.11:0.00:0.00:46,46:1,1:4,4	0.00:19:19:13.11:0.00:0.00:15,15:3,3:1,1
+chr12	3551050	.	.	GA	G	PASS	IC=4;IHP=5;MQ=60.00;MQ0=0;NT=ref;QSI=61;QSI_NT=61;RC=5;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=11.11;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:151:151:155.27:0.24:0.00:143,147:0,0:9,9	0.00:56:56:59.66:0.19:0.00:49,50:5,5:2,2
+chr12	87496530	.	.	T	TA	PASS	IC=11;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=86;QSI_NT=86;RC=10;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=12.59;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:137:137:91.53:0.00:0.00:132,132:0,0:5,5	0.00:48:48:31.01:0.00:0.00:34,34:9,9:5,5
+chr12	103951075	.	.	TA	T	PASS	IC=7;IHP=8;MQ=60.00;MQ0=0;NT=ref;QSI=40;QSI_NT=40;RC=8;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=13.07;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:74:74:77.52:0.00:0.00:67,67:0,0:2,2	0.00:31:31:27.29:0.00:0.00:24,24:4,4:3,3
+chr15	9172351	.	.	C	CT	PASS	IC=11;IHP=14;MQ=59.94;MQ0=0;NT=ref;QSI=42;QSI_NT=42;RC=10;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=6.23;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:68:68:112.67:0.00:0.00:62,62:3,3:3,3	0.00:27:27:42.01:0.00:0.00:16,16:7,7:4,4
+chr15	54726087	.	.	G	GGA	PASS	IC=1;IHP=11;MQ=60.00;MQ0=0;NT=ref;QSI=34;QSI_NT=34;RC=0;RU=GA;SGT=ref->het;SOMATIC;SomaticEVS=6.94;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:74:74:107.25:0.00:0.00:73,73:2,2:6,6	0.00:23:23:26.03:0.00:0.00:18,19:4,4:1,1
+chr15	98742323	.	.	AGCT	A	PASS	IC=4;IHP=1;MQ=60.00;MQ0=0;NT=ref;QSI=30;QSI_NT=30;RC=5;RU=GCT;SGT=ref->het;SOMATIC;SomaticEVS=10.73;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:41:41:43.28:0.00:0.00:34,34:0,0:8,8	0.00:15:15:17.51:0.00:0.00:12,12:3,3:0,0
+chr16	33287208	.	.	AT	A	PASS	IC=8;IHP=12;MQ=60.00;MQ0=0;NT=ref;QSI=37;QSI_NT=37;RC=9;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=8.79;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:74:74:78.33:0.00:0.00:73,73:0,0:1,1	0.00:31:31:37.58:0.00:0.00:25,25:4,4:2,2
+chr16	72791983	.	.	CT	C	PASS	IC=7;IHP=9;MQ=59.90;MQ0=0;NT=ref;QSI=17;QSI_NT=17;RC=8;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=9.86;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:65:65:45.51:0.00:0.00:65,65:0,0:0,1	0.00:17:17:13.84:0.00:0.00:14,14:3,3:1,1
+chr16	90784315	.	.	CA	C	PASS	IC=8;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=33;QSI_NT=33;RC=9;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=9.14;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:95:95:117.70:0.19:0.00:91,91:0,0:3,3	0.00:36:36:48.01:0.00:0.00:30,30:4,4:2,2
+chr16	91419932	.	.	GA	G	PASS	IC=4;IHP=5;MQ=60.00;MQ0=0;NT=ref;QSI=34;QSI_NT=34;RC=5;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=8.43;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:188:188:188.59:0.00:0.00:183,184:0,0:5,5	0.00:49:49:50.14:0.00:0.00:44,45:4,4:1,1
+chr17	56921421	.	.	CG	C	PASS	IC=4;IHP=5;MQ=60.00;MQ0=0;NT=ref;QSI=29;QSI_NT=29;RC=5;RU=G;SGT=ref->het;SOMATIC;SomaticEVS=6.29;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:118:118:111.26:0.00:0.00:115,117:0,0:3,3	0.00:56:56:55.31:0.00:0.00:50,56:4,4:2,2
+chr17	71389263	.	.	AG	A	PASS	IC=6;IHP=7;MQ=60.00;MQ0=0;NT=ref;QSI=30;QSI_NT=30;RC=7;RU=G;SGT=ref->het;SOMATIC;SomaticEVS=6.26;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:152:152:153.50:0.27:0.00:152,153:1,1:1,1	0.00:50:50:47.81:0.00:0.00:44,44:4,4:2,2
+chr18	77472594	.	.	GTC	G	PASS	IC=6;IHP=2;MQ=60.00;MQ0=0;NT=ref;QSI=39;QSI_NT=39;RC=7;RU=TC;SGT=ref->het;SOMATIC;SomaticEVS=6.16;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:39:39:27.70:0.00:0.00:34,34:2,2:3,3	0.00:11:11:7.27:0.00:0.00:8,8:3,3:0,0
+chr2	25458795	.	.	TG	T	PASS	IC=10;IHP=11;MQ=60.00;MQ0=0;NT=ref;QSI=12;QSI_NT=12;RC=11;RU=G;SGT=ref->het;SOMATIC;SomaticEVS=12.54;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:18:18:26.37:0.00:0.00:13,13:0,0:5,5	0.00:11:11:14.51:0.00:0.00:4,4:5,5:2,2
+chr2	32450032	.	.	AT	A	PASS	IC=7;IHP=8;MQ=60.00;MQ0=0;NT=ref;QSI=35;QSI_NT=35;RC=8;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=8.33;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:91:91:92.75:0.00:0.00:88,89:1,1:1,1	0.00:26:26:26.21:0.00:0.00:21,21:4,4:1,1
+chr2	66528334	.	.	T	TA	PASS	IC=11;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=35;QSI_NT=35;RC=10;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=6.24;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:59:59:102.48:0.92:0.00:51,51:1,1:7,7	0.00:31:31:47.55:0.00:0.00:24,24:4,4:3,3
+chr2	87322621	.	.	GT	G	PASS	IC=7;IHP=8;MQ=60.00;MQ0=0;NT=ref;QSI=36;QSI_NT=36;RC=8;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=11.57;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:75:75:83.06:0.21:0.00:75,75:0,0:0,0	0.00:34:34:33.59:0.00:0.00:28,29:4,4:2,2
+chr2	90607976	.	.	TGCA	T	PASS	IC=3;IHP=1;MQ=60.00;MQ0=0;NT=ref;QSI=37;QSI_NT=37;RC=4;RU=GCA;SGT=ref->het;SOMATIC;SomaticEVS=9.04;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:179:179:174.48:0.72:0.00:169,169:0,0:11,11	0.00:63:63:63.15:0.00:0.00:57,58:4,4:3,3
+chr3	57384849	.	.	TCTG	T	PASS	IC=5;IHP=4;MQ=60.00;MQ0=0;NT=ref;QSI=64;QSI_NT=64;RC=6;RU=CTG;SGT=ref->het;SOMATIC;SomaticEVS=14.76;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:72:72:75.23:0.00:0.00:73,73:0,0:0,0	0.00:35:35:35.83:0.00:0.00:29,30:5,5:1,1
+chr3	63237057	.	.	AT	A	PASS	IC=7;IHP=9;MQ=60.00;MQ0=0;NT=ref;QSI=26;QSI_NT=26;RC=8;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=6.25;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:119:119:114.77:0.00:0.00:117,117:0,0:4,4	0.00:51:51:50.16:0.00:0.00:47,48:4,4:1,1
+chr3	116217031	.	.	TG	T	PASS	IC=9;IHP=11;MQ=59.78;MQ0=0;NT=ref;QSI=49;QSI_NT=49;RC=10;RU=G;SGT=ref->het;SOMATIC;SomaticEVS=7.58;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:39:39:31.67:0.56:0.00:35,36:2,2:2,1	0.00:13:13:9.88:0.14:0.00:5,6:6,6:2,1
+chr4	98258695	.	.	AT	A	PASS	IC=8;IHP=9;MQ=60.00;MQ0=0;NT=ref;QSI=48;QSI_NT=48;RC=9;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=9.27;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:189:189:143.50:0.00:0.00:186,186:1,1:4,4	0.00:53:53:42.13:0.00:0.00:46,46:5,5:4,4
+chr4	107491959	.	.	TCTGC	T	PASS	IC=2;IHP=2;MQ=60.00;MQ0=0;NT=ref;QSI=34;QSI_NT=34;RC=3;RU=CTGC;SGT=ref->het;SOMATIC;SomaticEVS=6.90;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:132:132:124.57:0.38:0.00:121,121:0,0:13,13	0.00:74:74:67.04:0.06:0.00:67,68:4,4:4,4
+chr4	116179677	.	.	GGAAAA	G	PASS	IC=2;IHP=8;MQ=60.00;MQ0=0;NT=ref;QSI=37;QSI_NT=37;RC=3;RU=GAAAA;SGT=ref->het;SOMATIC;SomaticEVS=8.69;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:69:69:110.19:0.00:0.00:62,64:2,2:5,5	0.00:24:24:38.05:0.00:0.00:17,17:4,4:3,3
+chr4	148240819	.	.	GC	G	PASS	IC=9;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=49;QSI_NT=49;RC=10;RU=C;SGT=ref->het;SOMATIC;SomaticEVS=8.58;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:72:72:58.10:0.00:0.00:65,66:3,3:4,3	0.00:24:24:17.73:0.01:0.00:15,15:7,7:2,2
+chr6	94553299	.	.	TTC	T	PASS	IC=5;IHP=4;MQ=59.95;MQ0=0;NT=ref;QSI=86;QSI_NT=86;RC=6;RU=TC;SGT=ref->het;SOMATIC;SomaticEVS=8.84;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:249:249:239.52:0.71:0.00:245,246:0,0:9,8	0.00:103:103:95.75:0.00:0.00:91,91:6,6:6,6
+chr7	19425768	.	.	GCA	G	PASS	IC=6;IHP=2;MQ=60.00;MQ0=0;NT=ref;QSI=34;QSI_NT=34;RC=7;RU=CA;SGT=ref->het;SOMATIC;SomaticEVS=7.43;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:50:50:41.83:0.00:0.00:51,51:1,1:0,0	0.00:13:13:14.05:0.02:0.00:9,9:3,3:3,4
+chr7	104060614	.	.	GT	G	PASS	IC=7;IHP=8;MQ=59.39;MQ0=0;NT=ref;QSI=32;QSI_NT=32;RC=8;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=6.24;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:483:483:466.66:0.39:0.00:455,462:2,2:23,22	0.00:130:130:131.87:0.00:0.00:121,123:5,5:4,6
+chr8	55114626	.	.	G	GA	PASS	IC=10;IHP=11;MQ=60.00;MQ0=0;NT=ref;QSI=26;QSI_NT=26;RC=9;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=14.10;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:59:59:76.73:0.00:0.00:57,57:0,0:0,0	0.00:10:10:18.49:0.00:0.00:6,6:3,3:1,1
+chr9	99171228	.	.	A	AT	PASS	IC=11;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=49;QSI_NT=49;RC=10;RU=T;SGT=ref->het;SOMATIC;SomaticEVS=7.62;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:89:89:97.00:0.00:0.00:75,75:4,4:10,10	0.00:19:19:25.13:0.00:0.00:11,11:6,6:2,2
+chr9	107634195	.	.	TA	T	PASS	IC=7;IHP=10;MQ=60.00;MQ0=0;NT=ref;QSI=29;QSI_NT=29;RC=8;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=6.18;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:131:131:162.76:0.49:0.00:116,117:0,0:15,15	0.00:48:48:63.43:0.00:0.00:41,41:4,4:3,3
+chr9	108261629	.	.	CAGA	C	PASS	IC=3;IHP=4;MQ=60.00;MQ0=0;NT=ref;QSI=45;QSI_NT=45;RC=4;RU=AGA;SGT=ref->het;SOMATIC;SomaticEVS=11.44;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:89:89:92.93:0.15:0.00:86,88:0,0:5,5	0.00:41:41:39.23:0.00:0.00:37,38:4,4:0,0
+chrX	134570178	.	.	TA	T	PASS	IC=7;IHP=8;MQ=60.00;MQ0=0;NT=ref;QSI=34;QSI_NT=34;RC=8;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=7.90;TQSI=2;TQSI_NT=2	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:106:106:136.73:0.00:0.00:98,98:1,1:6,6	0.00:45:45:54.05:0.00:0.00:35,36:5,5:4,5
+chrX	163721700	.	.	GA	G	PASS	IC=4;IHP=6;MQ=60.00;MQ0=0;NT=ref;QSI=47;QSI_NT=47;RC=5;RU=A;SGT=ref->het;SOMATIC;SomaticEVS=9.64;TQSI=1;TQSI_NT=1	BCN50:DP:DP2:DP50:FDP50:SUBDP50:TAR:TIR:TOR	0.00:191:191:192.01:0.00:0.00:182,182:1,1:8,8	0.00:71:71:70.41:0.00:0.00:63,63:5,5:3,3
