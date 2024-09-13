@@ -1,0 +1,71 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=LowDepth,Description="Tumor or normal sample read depth at this locus is below 2">
+##FILTER=<ID=LowEVS,Description="Somatic Empirical Variant Score (SomaticEVS) is below threshold">
+##FORMAT=<ID=AU,Number=2,Type=Integer,Description="Number of 'A' alleles used in tiers 1,2">
+##FORMAT=<ID=CU,Number=2,Type=Integer,Description="Number of 'C' alleles used in tiers 1,2">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1 (used+filtered)">
+##FORMAT=<ID=FDP,Number=1,Type=Integer,Description="Number of basecalls filtered from original read depth for tier1">
+##FORMAT=<ID=GU,Number=2,Type=Integer,Description="Number of 'G' alleles used in tiers 1,2">
+##FORMAT=<ID=SDP,Number=1,Type=Integer,Description="Number of reads with deletions spanning this site at tier1">
+##FORMAT=<ID=SUBDP,Number=1,Type=Integer,Description="Number of reads below tier1 mapping quality threshold aligned across this site">
+##FORMAT=<ID=TU,Number=2,Type=Integer,Description="Number of 'T' alleles used in tiers 1,2">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_1_S1.strelka.snvs.pass.vcf --exclude-filtered true --variant Exome-seq_Control_1_S1.strelka.snvs.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:57:26 AM UTC">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants --output Exome-seq_Control_1_S1.strelka.snvs.vcf --variant strelka/results/variants/somatic.snvs.vcf --reference /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --invertSelect false --exclude-non-variants false --exclude-filtered false --preserve-alleles false --remove-unused-alternates false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-bcf-codec false --genomicsdb-shared-posixfs-optimizations false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.9.0",Date="June 10, 2021 9:57:22 AM UTC">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=NT,Number=1,Type=String,Description="Genotype of the normal in all data tiers, as used to classify somatic variants. One of {ref,het,hom,conflict}.">
+##INFO=<ID=PNOISE,Number=1,Type=Float,Description="Fraction of panel containing non-reference noise at this site">
+##INFO=<ID=PNOISE2,Number=1,Type=Float,Description="Fraction of panel containing more than one non-reference noise obs at this site">
+##INFO=<ID=QSS,Number=1,Type=Integer,Description="Quality score for any somatic snv, ie. for the ALT allele to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSS_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref read-position in the tumor">
+##INFO=<ID=SGT,Number=1,Type=String,Description="Most likely somatic genotype excluding normal noise states">
+##INFO=<ID=SNVSB,Number=1,Type=Float,Description="Somatic SNV site strand bias">
+##INFO=<ID=SOMATIC,Number=0,Type=Flag,Description="Somatic mutation">
+##INFO=<ID=SomaticEVS,Number=1,Type=Float,Description="Somatic Empirical Variant Score (EVS) expressing the phred-scaled probability of the call being a false positive observation.">
+##INFO=<ID=TQSS,Number=1,Type=Integer,Description="Data tier used to compute QSS">
+##INFO=<ID=TQSS_NT,Number=1,Type=Integer,Description="Data tier used to compute QSS_NT">
+##cmdline=/opt/strelka-2.9.10.centos6_x86_64/bin/configureStrelkaSomaticWorkflow.py --normalBam /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Exome-seq_Controls_merged/Exome-seq_Controls_merged_final.bam --tumorBam Exome-seq_Control_1_S1_merged_final.bam --callRegions /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/S0276129_Regions.bed.bgz --referenceFasta /data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa --exome --indelCandidates manta/results/variants/candidateSmallIndels.vcf.gz --runDir strelka
+##content=strelka somatic snv calls
+##contig=<ID=chr10,length=129993255,assembly=genome.fa>
+##contig=<ID=chr11,length=121843856,assembly=genome.fa>
+##contig=<ID=chr12,length=121257530,assembly=genome.fa>
+##contig=<ID=chr13,length=120284312,assembly=genome.fa>
+##contig=<ID=chr14,length=125194864,assembly=genome.fa>
+##contig=<ID=chr15,length=103494974,assembly=genome.fa>
+##contig=<ID=chr16,length=98319150,assembly=genome.fa>
+##contig=<ID=chr17,length=95272651,assembly=genome.fa>
+##contig=<ID=chr18,length=90772031,assembly=genome.fa>
+##contig=<ID=chr19,length=61342430,assembly=genome.fa>
+##contig=<ID=chr1,length=197195432,assembly=genome.fa>
+##contig=<ID=chr2,length=181748087,assembly=genome.fa>
+##contig=<ID=chr3,length=159599783,assembly=genome.fa>
+##contig=<ID=chr4,length=155630120,assembly=genome.fa>
+##contig=<ID=chr5,length=152537259,assembly=genome.fa>
+##contig=<ID=chr6,length=149517037,assembly=genome.fa>
+##contig=<ID=chr7,length=152524553,assembly=genome.fa>
+##contig=<ID=chr8,length=131738871,assembly=genome.fa>
+##contig=<ID=chr9,length=124076172,assembly=genome.fa>
+##contig=<ID=chrM,length=16299,assembly=genome.fa>
+##contig=<ID=chrX,length=166650296,assembly=genome.fa>
+##contig=<ID=chrY,length=15902555,assembly=genome.fa>
+##fileDate=20210609
+##priorSomaticSnvRate=0.0001
+##reference=file:///data/ANALYSIS/Kay_Shigemori_SOUK007477_Exome/Reference/genome.fa
+##source=SelectVariants
+##source_version=2.9.10
+##startTime=Wed Jun  9 15:45:23 2021
+##VEP="v112.0" API="v112" time="2024-07-08 16:37:35" cache="/home/liaskolariki/.vep/mus_musculus_aj/104_A_J_v1" ensembl=112 ensembl-funcgen=112 ensembl-io=112 ensembl-variation=112 assembly="A_J_v1" genebuild="2016-10"
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|EXON|INTRON|HGVSc|HGVSp|cDNA_position|CDS_position|Protein_position|Amino_acids|Codons|Existing_variation|DISTANCE|STRAND|FLAGS|SYMBOL_SOURCE|HGNC_ID|WildtypeProtein|DownstreamProtein|ProteinLengthChange">
+##WildtypeProtein=The normal, non-mutated protein sequence
+##DownstreamProtein=Predicted downstream translation for frameshift mutations
+##ProteinLengthChange=Predicted change in protein product length
+##VEP-command-line='vep --assembly A_J_v1 --cache --cache_version 104 --database 0 --dir_cache [PATH]/.vep --fasta [PATH]/Mus_musculus_aj.A_J_v1.dna.toplevel.fa --force_overwrite --input_file [PATH]/S1_snvs.vcf_ --offline --output_file [PATH]/S1_snvs.combined.vep.vcf --plugin Wildtype,[PATH]/Wildtype.pm --plugin Downstream,[PATH]/Downstream.pm --species mus_musculus_aj --symbol --vcf --verbose'
+##bcftools_filterVersion=1.2+htslib-1.2.1
+##bcftools_filterCommand=filter -i 'INFO/CSQ ~ "HIGH|MODERATE"' -o /mnt/c/Users/agsko/dev/pcm/DeepNeo/S1_snvs.high_moderate.vep.vcf /mnt/c/Users/agsko/dev/pcm/DeepNeo/S1_snvs.combined.vep.vcf
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOR
